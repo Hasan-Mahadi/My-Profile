@@ -17,7 +17,7 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             
             <span className="text-xl">Full Stack Developer</span>
-            <h1 className="h1 mb-7">Hello I'm <br /> <span className="text-accent">Md.Hasan</span></h1>
+            <h1 className="h1 mb-7">Hello I'm <br /> <span className="">Md.Hasan</span></h1>
             <p className="max-w-[500px]  mb-9 text-white/80">I'm a passionate Full Stack Developer with expertise in the MERN stack, dedicated to crafting clean, efficient, and scalable web applications.  strong foundation in both frontend and backend. I  focusing on Software Engineering!</p>
             
 
