@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +26,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        <StairTransition/>
-        
+        <Header />
+        <StairTransition />
+
         <PageTransition>
           {children}
+          <Toaster richColors position="top-center" duration={10000} />
         </PageTransition>
-
-
-       
       </body>
     </html>
   );

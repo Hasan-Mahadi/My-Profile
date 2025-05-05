@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from 'sonner';
+
 import {
   Select,
   SelectContent,
@@ -34,6 +37,60 @@ const info = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    
+    
+    
+    
+    
+    
+    if (res.ok) {
+      toast.success(
+        <div>
+          <p className="font-semibold">Thanks For Your Message!</p>
+          <p className="text-sm text-muted-foreground">Md.Hasan reply will be given very soon. </p>
+        </div>
+      );
+    } else {
+      toast.error(
+        <div>
+          <p className="font-semibold">Error!</p>
+          <p className="text-sm text-muted-foreground">Failed to send message.</p>
+        </div>
+      );
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -47,7 +104,10 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px] ">
           {/* form */}
           <div className="xl:h-[54%]  order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl ">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl "
+            >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe
@@ -57,35 +117,60 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2  gap-6 ">
-                <Input type="firstname" placeholder="FirstName" />
-                <Input type="lastname" placeholder="LastName" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone Number" />
+                <Input
+                  name="firstname"
+                  placeholder="FirstName"
+                  onChange={handleChange}
+                />
+                <Input
+                  name="lastname"
+                  placeholder="LastName"
+                  onChange={handleChange}
+                />
+                <Input
+                  name="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                />
+                <Input
+                  name="phone"
+                  placeholder="Phone"
+                  onChange={handleChange}
+                />
               </div>
 
               {/* select */}
 
-              <Select>
+              <Select
+                onValueChange={(val) =>
+                  setFormData({ ...formData, service: val })
+                }
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-
-                    <SelectItem value="est">Full Stack Developer</SelectItem>
-                    <SelectItem value="cst">MERN Stack Developer</SelectItem>
-                    <SelectItem value="mst">Web Developer</SelectItem>
-                    <SelectItem value="nst">Software Engineer</SelectItem>
-                  </SelectGroup>
+                  <SelectItem value="Full Stack Developer">
+                    Full Stack Developer
+                  </SelectItem>
+                  <SelectItem value="MERN Stack Developer">
+                    MERN Stack Developer
+                  </SelectItem>
+                  <SelectItem value="Web Developer">Web Developer</SelectItem>
+                  <SelectItem value="Software Engineer">
+                    Software Engineer
+                  </SelectItem>
                 </SelectContent>
               </Select>
 
               <Textarea
                 className="h-[200px] "
-                placeholder="Type your message here."
+                name="message"
+                placeholder="Type your message here"
+                onChange={handleChange}
               />
-              <Button size="md" className="max-w-40 ">
+
+              <Button className="max-w-40 " size="md" type="submit">
                 Send message
               </Button>
             </form>
