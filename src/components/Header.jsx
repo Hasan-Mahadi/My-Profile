@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import Navbar from "./Navbar";
 import MobileNav from "./MobileNav";
+import { FaCode } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -10,9 +11,22 @@ const Header = () => {
         {/* logo */}
 
         <Link href="/">
-          <h1 className="text-4xl text-accent font-semibold flex items-center gap-2">
-            Md.Hasan <span className="text-accent text-2xl">&lt;/&gt;</span>
-          </h1>
+          
+          
+          
+          
+          <div className="flex items-center gap-3 ">
+  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+    <FaCode className="text-primary text-lg" />
+  </div>
+   
+  <h1 className="text-4xl text-accent font-semibold flex items-center gap-2">
+  Md.Hasan 
+  
+</h1>
+   
+   
+</div>
         </Link>
 
         {/* desktop Navbar & hire me button*/}

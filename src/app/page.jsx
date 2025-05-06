@@ -1,9 +1,11 @@
+"use client";
 import DownloadCV from "@/components/DownloadCV";
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   return (
@@ -12,10 +14,27 @@ const Home = () => {
         <div className="flex flex-col  xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 ">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Full Stack Developer</span>
             <h1 className="h1 mb-7">
               Hello I'm <br /> <span className="">Md.Hasan</span>
             </h1>
+
+            <div className="h-12 md:h-14 lg:h-16 text-xl md:text-2xl lg:text-3xl font-medium text-accent">
+              <TypeAnimation
+                sequence={[
+                  "Full Stack Developer",
+                  1500,
+                  "MERN Specialist",
+                  1500,
+                  "Software Engineer",
+                  1500,
+                  "Tech Enthusiast",
+                  1500,
+                ]}
+                wrapper="span"
+                speed={100}
+                repeat={Infinity}
+              />
+            </div>
             <p className="max-w-[500px]  mb-9 text-white/80">
               I'm a passionate Full Stack Developer with expertise in the MERN
               stack, dedicated to crafting clean, efficient, and scalable web
@@ -26,14 +45,8 @@ const Home = () => {
             {/* btn and socials */}
 
             <div className="flex flex-col xl:flex-row items-center gap-8 ">
-              
-              
-              <DownloadCV/>
-              
-             
-             
-             
-             
+              <DownloadCV />
+
               <div className="mb-8 xl:mb-0 ">
                 <Socials
                   containerStyle="flex gap-6"
@@ -49,7 +62,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      
       <Stats />
     </section>
   );
