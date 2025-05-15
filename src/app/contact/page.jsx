@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { toast } from 'sonner';
+import { toast } from "sonner";
 
 import {
   Select,
@@ -58,37 +58,25 @@ const Contact = () => {
       body: JSON.stringify(formData),
     });
 
-    
-    
-    
-    
-    
-    
     if (res.ok) {
       toast.success(
         <div>
           <p className="font-semibold">Thanks For Your Message!</p>
-          <p className="text-sm text-muted-foreground">Md.Hasan reply will be given very soon. </p>
+          <p className="text-sm text-muted-foreground">
+            Md.Hasan reply will be given very soon.{" "}
+          </p>
         </div>
       );
     } else {
       toast.error(
         <div>
           <p className="font-semibold">Error!</p>
-          <p className="text-sm text-muted-foreground">Failed to send message.</p>
+          <p className="text-sm text-muted-foreground">
+            Failed to send message.
+          </p>
         </div>
       );
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   };
 
   return (
@@ -108,8 +96,17 @@ const Contact = () => {
               onSubmit={handleSubmit}
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl "
             >
-              <h3 className="text-4xl text-accent">Let's work together</h3>
-              <p className="text-white/60">
+              <h3
+                className="text-4xl text-accent"
+                data-aos="flip-right"
+                data-aos-delay="100"
+                data-aos-duration="800"
+              >
+                Let's work together
+              </h3>
+              <p className="text-white/60" data-aos="flip-left"
+data-aos-delay="100"
+data-aos-duration="800">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe
                 inventore animi neque, a repellat ratione beatae ipsa tempore
                 distinctio obcaecati corrupti atque quae, adipisci mollitia est

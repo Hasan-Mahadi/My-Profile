@@ -40,6 +40,15 @@ const Services = () => {
   return <section className="min-h-[80vh]  flex flex-col justify-center py-12 xl:py-0">
      
      <div className="container mx-auto">
+      <h1
+  data-aos="flip-right"
+  data-aos-delay="100"
+  data-aos-duration="800"
+  className="text-xl pb-8 sm:text-2xl md:text-3xl lg:text-4xl 
+  font-bold leading-tight text-center text-white"
+>
+  Hasan's Services
+</h1>
       <motion.div initial={{opacity:0}}
       animate={{
         opacity:1,

@@ -6,6 +6,10 @@ import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
+import Work from "./projects/page";
+import Services from "./services/page";
+import Contact from "./contact/page";
+import SkillsShowcase from "@/components/SkillsShowcase";
 
 const Home = () => {
   return (
@@ -62,8 +66,25 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <Stats />
+
+      <SkillsShowcase />
+
+      <h1
+        data-aos="flip-right"
+        data-aos-delay="100"
+        data-aos-duration="800"
+        className="text-xl lg:mt-20 mt-10 sm:text-2xl md:text-3xl lg:text-4xl 
+  font-bold leading-tight text-center text-white"
+      >
+        Projects Showcase
+      </h1>
+      <Work />
+
+      <Services/>
+
+      <Contact/>
     </section>
   );
 };
