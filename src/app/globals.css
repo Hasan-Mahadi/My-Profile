@@ -7,6 +7,24 @@
 
 
 
+/* Glow effect */
+.shadow-glow {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 153, 0.6));
+}
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Animation for the floating icons */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
 
 @keyframes marquee {
