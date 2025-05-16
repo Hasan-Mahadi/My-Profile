@@ -22,7 +22,7 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(+880) 01766-627499",
+    description: "(+880) 1766-627499",
   },
   {
     icon: <FaEnvelope />,
@@ -60,7 +60,7 @@ const Contact = () => {
 
     if (res.ok) {
       toast.success(
-        <div>
+        <div >
           <p className="font-semibold">Thanks For Your Message!</p>
           <p className="text-sm text-muted-foreground">
             Md.Hasan reply will be given very soon.{" "}
