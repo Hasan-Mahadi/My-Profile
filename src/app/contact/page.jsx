@@ -157,6 +157,9 @@ data-aos-duration="800">
                   <SelectItem value="Software Engineer">
                     Software Engineer
                   </SelectItem>
+                  <SelectItem value="Wix Developer">
+                   Wix Developer
+                  </SelectItem>
                 </SelectContent>
               </Select>
 

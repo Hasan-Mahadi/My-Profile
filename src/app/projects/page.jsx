@@ -1,177 +1,4 @@
-// "use client";
-// import { motion } from "framer-motion";
-// import { useState } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipProvider,
-//   TooltipTrigger,
-// } from "@/components/ui/tooltip";
-// import Link from "next/link";
-// import Image from "next/image";
-// import WorkSliderBtns from "@/components/WorkSliderBtns";
 
-// const projects = [
-//   {
-//     num: "01",
-//     category: "fullstack",
-//     title: "Project 1",
-//     description:
-//       "Your one-stop online destination for books of all genres. Whether you're a passionate reader, a student, or looking for the perfect gift, we have something for everyone.",
-//     stack: [
-//       { name: "MERN" },
-//       { name: "Typscript" },
-//       { name: "Redux" },
-//       { name: "Shadcn" },
-//       { name: "tailwindcss" },
-//     ],
-//     image: "/assets/Projects-1-ss.png",
-//     live: "https://book-shop-app-five.vercel.app/",
-//     github: "https://github.com/Hasan-Mahadi/Book-Shop-Frontend-Site.git",
-//   },
-//   {
-//     num: "02",
-//     category: "fullstack",
-//     title: "Project 2",
-//     description:
-//       "Your one-stop online destination for Student and Tutor. you're a passionate reader, a student, or looking for the perfect Teacher, we have something for everyone.",
-//     stack: [
-//       { name: "MERN" },
-//       { name: "Typscript" },
-//       { name: "Next.js" },
-//       { name: "Shadcn" },
-//     ],
-//     image: "/assets/Projects-Tutor-ss.png",
-//     live: "https://tutor-link-frontend-nine.vercel.app/",
-//     github: "https://github.com/Hasan-Mahadi/Tutor-Link-Frontend-Team-Projects.git",
-//   },
-//   {
-//     num: "03",
-//     category: "Frontend",
-//     title: "Project 3",
-//     description:
-//       " I'm a passionate Full Stack Developer with expertise in the MERN stack, dedicated to crafting clean, efficient, and scalable web applications. ",
-//     stack: [{ name: "Next.js" }, { name: "Node.js" }, { name: "tailwindcss" }],
-//     image: "/assets/Projects-3-.png",
-//     live: "",
-//     github: "",
-//   },
-// ];
-
-// const Work = () => {
-//   const [project, setProject] = useState(projects[0]);
-
-//   const handleSlideChange = (swiper) => {
-//     const currentIndex = swiper.activeIndex;
-
-//     setProject(projects[currentIndex]);
-//   };
-
-//   return (
-//     <motion.section
-//       initial={{ opacity: 0 }}
-//       animate={{
-//         opacity: 1,
-//         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-//       }}
-//       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
-//     >
-//       <div className="container mx-auto">
-//         <div className="flex flex-col xl:flex-row xl:gap-[30px] ">
-//           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none ">
-//             <div className="flex flex-col  gap-[30px] h-[50%]">
-//               <div className="text-8xl leading-none font-extrabold text-transparent  text-outline">
-//                 {project.num}
-//               </div>
-
-//               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all  duration-500  capitalize">
-//                 {project.category} projects
-//               </h2>
-//               <p className="text-white/60">{project.description}</p>
-//               <ul className="flex gap-4">
-//                 {project.stack.map((item, index) => {
-//                   return (
-//                     <li key={index} className="text-xl text-accent">
-//                       {item.name},{index !== project.stack.length - 1 && ","}
-//                     </li>
-//                   );
-//                 })}
-//               </ul>
-
-//               <div className="border border-white/20"></div>
-//               <div className="flex items-center  gap-4">
-//                 <Link href={project.live}>
-//                   <TooltipProvider delayDuration={100}>
-//                     <Tooltip>
-//                       <TooltipTrigger
-//                         className="w-[70px] h-[70px] rounded-full bg-white/5
-//                        flex justify-center items-center group"
-//                       >
-//                         <BsArrowUpRight className="text-white text-3xl group-hover:text-accent  " />
-//                       </TooltipTrigger>
-//                       <TooltipContent className="bg-white text-black">
-//                         <p>Live Projects</p>
-//                       </TooltipContent>
-//                     </Tooltip>
-//                   </TooltipProvider>
-//                 </Link>
-
-//                 <Link href={project.github}>
-//                   <TooltipProvider delayDuration={100}>
-//                     <Tooltip>
-//                       <TooltipTrigger
-//                         className="w-[70px] h-[70px] rounded-full bg-white/5
-//       flex justify-center items-center group"
-//                       >
-//                         <BsGithub className="text-white text-3xl group-hover:text-accent  " />
-//                       </TooltipTrigger>
-//                       <TooltipContent className="bg-white text-black">
-//                         <p>Github repository</p>
-//                       </TooltipContent>
-//                     </Tooltip>
-//                   </TooltipProvider>
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="w-full xl:w-[50%]">
-//             <Swiper
-//               spaceBetween={30}
-//               slidesPerView={1}
-//               className="xl:h-[520px] mb-12"
-//               onSlideChange={handleSlideChange}
-//             >
-//               {projects.map((project, index) => {
-//                 return (
-//                   <SwiperSlide key={index} className="w-full ">
-//                     <div className="h-[460px]  relative group flex justify-center items-center bg-pink-50/20">
-//                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-//                       <div className="relative w-full h-full ">
-//                         <Image
-//                           src={project.image}
-//                           fill
-//                           className="object-cover"
-//                           alt=""
-//                         />
-//                       </div>
-//                     </div>
-//                   </SwiperSlide>
-//                 );
-//               })}
-
-//               <WorkSliderBtns containerStyles="flex gap-2 absolute right-0  bottom-[calc{50%_-_22px}] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none  " btnStyles="bg-accent hover:bg-accent-hover text-primary  text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all" />
-//             </Swiper>
-//           </div>
-//         </div>
-//       </div>
-//     </motion.section>
-//   );
-// };
-
-// export default Work;
 
 "use client";
 import { motion } from "framer-motion";
@@ -249,6 +76,7 @@ const projects = [
         "Used WebRTC with fallback options and connection optimization",
     },
   },
+
   {
     num: "03",
     category: "frontend",
@@ -272,6 +100,84 @@ const projects = [
       ],
       challenges: "Balancing animations with performance",
       solutions: "Optimized animations using Framer Motion and lazy loading",
+    },
+  },
+  {
+    num: "04",
+    category: "wix website",
+    title: "CraftHub – Business Promotion Wix Website",
+    description:
+      "CraftHub is a modern and responsive business promotion website designed to help small manufacturers and creators showcase and sell their handmade or custom products online. The client can display their product gallery, share detailed information about their services, and allow visitors to contact them directly through the integrated contact section.",
+
+    stack: [
+      { name: "Wix Website" },
+      
+    ],
+    image: "/assets/wix-1.png",
+    live: "https://www.maxcraftrenovations.com/",
+    github: "https://github.com/Hasan-Mahadi/My-Profile.git",
+    details: {
+      features: [
+        "Interactive animations",
+        "Responsive design",
+        "Product Gallery",
+        "SEO Friendly",
+        "Modern UI/UX",
+      ],
+      challenges: "Built with optimized structure for better search ranking.",
+      solutions: "This website helps the business gain more exposure and reach potential customers effortlessly.",
+    },
+  },
+  {
+    num: "05",
+    category: "wix website",
+    title: "Legacyrephotography – photography & videography service Wix Website",
+    description:
+      "VisionFrame is a professional photography and videography service website built to help creative professionals promote their visual services online. The client offers real estate photography, branding headshots, and drone-shot slideshow videos through different customizable packages.",
+
+    stack: [
+      { name: "Wix Website" },
+      
+    ],
+    image: "/assets/wix-2.png",
+    live: "https://www.legacyrephotography.com/home",
+    github: "https://github.com/Hasan-Mahadi/My-Profile.git",
+    details: {
+      features: [
+        "Interactive animations",
+        "Responsive design",
+        "Dynamic Photo Gallery",
+        "SEO Friendly",
+        "Video Section",
+      ],
+      challenges: "Showcases the client’s best photography and video work.",
+      solutions: "The website showcases a dynamic gallery, real client testimonials, and Google-integrated reviews — all designed to build trust and attract potential customers.",
+    },
+  },
+  {
+    num: "06",
+    category: "wix website",
+    title: "Nextdoorsings – professional  vehicle branding and painting business Wix Website",
+    description:
+      "AutoMark is a professional service website designed for a vehicle branding and painting business. The client provides custom branding, design, and painting services for different types of vehicles — including cars, trucks, and commercial vans.",
+
+    stack: [
+      { name: "Wix Website" },
+      
+    ],
+    image: "/assets/wix-3.png",
+    live: "https://www.nextdoorsigns.com/",
+    github: "https://github.com/Hasan-Mahadi/My-Profile.git",
+    details: {
+      features: [
+        "Interactive animations",
+        "Responsive design",
+        "Service Showcase",
+        "SEO Friendly",
+        "Project Gallery",
+      ],
+      challenges: "Displays all available branding and vehicle painting services with images and details.",
+      solutions: "the business can display its previous projects, highlight offered services, and make it easier for potential customers to contact or request a quote online.",
     },
   },
 ];
@@ -302,11 +208,11 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0 relative"
+      className="min-h-[80vh] flex flex-col justify-center py-12  xl:px-0 relative"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+          <div className="w-full xl:w-[50%] xl:h-[700px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}

@@ -29,6 +29,8 @@ const Home = () => {
                   1500,
                   "MERN Specialist",
                   1500,
+                  "Wix Developer",
+                  1500,
                   "Software Engineer",
                   1500,
                   "Tech Enthusiast",

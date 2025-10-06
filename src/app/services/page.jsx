@@ -30,6 +30,12 @@ const services = [
     title:'Software Engineer',
     description:'I,m a passionate Full Stack Developer with expertise in the MERN stack, dedicated to crafting clean, efficient, and scalable web applications. strong foundation in both frontend and backend. I focusing on Software Engineering!',
     href:""
+  },
+  {
+    num:'05',
+    title:'Wix Developer',
+    description:'Hello! I’m a professional Wix website developer and designer with years of experience creating modern, user-friendly, and fully responsive websites. I specialize in Wix website design, redesign, and custom Wix website development that perfectly fits your brand’s vision and goals.',
+    href:"http://www.fiverr.com/s/0bgpYRA"
   }
 ];
 
@@ -37,7 +43,7 @@ const services = [
 
 
 const Services = () => {
-  return <section className="min-h-[80vh]  flex flex-col justify-center py-12 xl:py-0">
+  return <section className="min-h-[80vh]  flex flex-col justify-center py-12  xl:py-0">
      
      <div className="container mx-auto">
       <h1
