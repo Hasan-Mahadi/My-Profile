@@ -163,6 +163,7 @@ const projects = [
 
     stack: [
       { name: "Wix Website" },
+      { name: "Wix Website" },
       
     ],
     image: "/assets/wix-3.png",
